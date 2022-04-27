@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html  > 
+  <head>
+    <title> log in </title>
+    <link rel="stylesheet" href="style.css" >
+
+
+   </head>
+     <body>
+
+<!--  home page -->
+
+<div class="menu"> 
+   <ul>
+    <li><a href="#"> <img src="list.png"> </a></li>
+    <li><a href="#"> List </a></li>
+    <li><a href="hom.html"> Home </a></li>
+    <li><a href="#">About Us </a></li>
+    <li><a href="log.html"> Log In </a></li>
+    <li><a href="#"> Services </a></li>
+    <li><a href="#"> Contact </a></li>
+    <li><a href="#"> <img src="sun.png"> </a></li>
+     
+</ul>   
+
+
+
+</div>
+
+
+
+
+ 
+     <div class="hero">
+         <div class="form-box">
+             <div class="button-box">
+                <div id="btn"> </div>  
+             <button type="button" class="toggle-btn" onclick="login()"> Log In </button>
+             <button type="button" class="toggle-btn" onclick="register()"> Register</button>
+     </div>
+    
+      <div class="social-icons">
+           <a href="https://www.facebook.com/"> <img src="fb.png"> </a>
+          <a href="https://www.whatsapp.com/"> <img src="wa.png"></a>
+          <a href="https://www.instagram.com/"> <img src="in.png"></a>
+           <a href="https://www.youtube.com/"> <img src="yt.png"> </a>
+          <a href="https://www.twitter.com/"> <img src="te.png"></a>
+   </div>
+  
+       <form  id="login" class="input-group" >
+                      
+                  <b> user name</b>
+                <input type="text" class="input-field" placeholder="user name">
+                  <b>  password </b>
+              <input type="text" class="input-field"  placeholder="Enter password">
+                 <br>
+                  <a href="#" class="input-field"> forget password?</a><br><br>
+                 <input type="checkbox" class="check-box">
+                <span> remember me </span><br>          
+          <button type="submit" class="submit-btn"> Log In</button>
+                   
+
+</form>
+      <div id="register" class="input-group" >
+         
+      <form  onsubmit="sendEmail(); resst(); return false;"  >
+                     
+                  <b> User name</b>
+                <input type="text" class="input-field" placeholder="User name"><br>
+             
+                  <b> Phone number</b>
+                <input type="text" class="input-field" placeholder="Phone number"><br>
+                 
+                  <b> Email</b>
+                <input type="email" class="input-field" placeholder="Enter email"><br>
+                  
+                  <b>  password </b>
+              <input type="text" class="input-field"  placeholder="Enter password">
+                <br> 
+                 
+                 <input type="checkbox" class="check-box">
+                <span id="sub"> I agree to the terms & conditions </span><br>          
+                <button type="submit" class="submit-btn"> Register </button>
+                  
+
+</form>
+
+</div>
+
+
+ 
+          <script>
+               var x = document.getElementById("login");
+               var y = document.getElementById("register");
+               var z = document.getElementById("btn");
+               function register(){
+                  x.style.left = "-400px";
+                 y.style.left = "50px";
+                 z.style.left = "110px";
+                 
+                }
+                function login(){
+                  x.style.left = "50px";
+                 y.style.left = "450px";
+                 z.style.left = "0";
+                 
+                }
+
+
+        </script>
+   
+
+
+
+          <script src="https://smtpjs.com/v3/smtp.js"> </script> 
+
+          <script>
+
+             function sendEmail(){
+                   Email.send({
+                  Host:"smtp.gmail.com",
+                  Username:"esraashaban231@gmail.com",
+                  Password:"01143274346",
+                  To:"esraashaban231@gmail.com",
+                 From:document.getElementById("email").value,
+                 Subject:"New contact From Enquiry",
+                 Body:"Name:"+document.getElementById("name").value
+                   +"<br> Email: "+document.getElementById("email").value
+                   +"<br> Phone number: "+document.getElementById("phone").value
+                   +"<br> Password: "+document.getElementById("password").value
+                 }).then(
+                    message => alert("message sent succesfully")
+                 );
+              }
+
+     </script>
+
+
+</body>
+</html>
